@@ -16,12 +16,14 @@ def get_pic_and_dict(font_file, need_save=True):
             height = ascender - descender # 利用上沿和下沿计算字形高度
             #pen.show(width=width, height=height, transform=Offset(0, -descender)) # 显示以及矫正
             img = pen.image(width=width, height=height,transform=Offset(0, -descender))
-            img.save("font/"+value+".png")
+            if value[0:3] == "uni":
+                img.save("font/"+value+".png")
     char_list = [chr(ch_unicode) for ch_unicode in unicode_list]
     # create dict which maps char to unicode
     char_dict = {}
     for i in range(len(char_list)):
-        char_dict[char_list[i]] = unicode_list[i]
+        char_dict[char_list[i]] = m_dict[unicode_list[i]]
     return char_dict
 font_file = "dataset\jinwen_ttf\jinwen.ttf"
 char_dict = get_pic_and_dict(font_file)
+print(char_dict)
