@@ -3,8 +3,8 @@ import json
  
 #定义文件路径
 path = 'D:/Shanghaitech/人工智能/CS181-2022Fall-Project/dataset/CCPC/'
-patht = 'poetry.txt'
-ci = '悲'
+patht = 'poetry_le.txt'
+ci = '乐'
 times = {'None':0}
  
 # 打开文件,r是读取,encoding是指定编码格式
