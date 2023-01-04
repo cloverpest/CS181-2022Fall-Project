@@ -32,3 +32,15 @@ text = text_bei & text_ai & text_le & text_xi
 with open("poetry.txt", 'w') as f:
     for line in text:
         f.write(line + '\n')
+# create a dict map text to emotion
+t2e = {}
+for line in text:
+    t2e[line] = -1
+
+# create a json file with "content" and "emotion" attributes
+# Path: D:\Shanghaitech\人工智能\CS181-2022Fall-Project
+import json
+with open("poetry.json", 'w', encoding="utf8") as f:
+    json.dump(t2e, f, ensure_ascii=False, indent=0)
+
+        
