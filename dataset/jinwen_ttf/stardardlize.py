@@ -29,7 +29,7 @@ def stardardlize(path):
     final_img = Image.new("L", resolution)
     final_img.paste(output, (int((resolution[0] - output.size[0])/2),int((resolution[1] - output.size[1])/2)))
     final_img.save("standardlized/" + path)
-paths = ["uni4EBA/", "uni6C34/", "uni7A0B/", "uni7AF9/", "uni7C7D/", "uni7E83/"]
+paths = ["uni4EBA/", "uni6C34/", "uni7A0B/", "uni7AF9/", "uni7C7D/", "uni7E83/","uni5A0C/","uni5C71/","uni8A00/","uni8DB3/","uni94A0/"]
 for path in paths:
     for f in os.listdir(path):
         stardardlize(path+f)

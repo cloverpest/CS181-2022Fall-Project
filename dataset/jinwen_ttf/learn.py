@@ -41,7 +41,7 @@ def handwriteclasstest():
         for f in listdir('standardlized/' + cluster):
             mTest += 1
             vectorUnderTest = img2vector('standardlized/' + cluster + '/' + f)
-            classifierResult = classify0(vectorUnderTest, trainingMat, hwLabels, 6)
+            classifierResult = classify0(vectorUnderTest, trainingMat, hwLabels, 11)
             print("the classifier came back with: %s, the real answer is: %s" % (classifierResult, cluster))
             if (classifierResult != cluster): 
                 errorCount += 1.0
