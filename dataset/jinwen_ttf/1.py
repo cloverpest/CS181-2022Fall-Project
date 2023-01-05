@@ -4,7 +4,7 @@ import json
 #定义文件路径
 path = 'D:/Shanghaitech/人工智能/CS181-2022Fall-Project/dataset/CCPC/'
 patht = 'poetry_le.txt'
-ci = '乐'
+ci = '哀'
 times = {'None':0}
  
 # 打开文件,r是读取,encoding是指定编码格式
@@ -34,7 +34,7 @@ with open(path + 'ccpc_train_v1.0.json','r',encoding = 'utf-8') as fp:
     for ci2 in list(times.keys())[0:19]:
         for datas in data_arr:
             data = json.loads(datas)
-            if data['content'].find(ci2)>0:
+            if data['content'].find(ci2)!=-1:
                 link = data['keywords'].split()
                 for item in link:
                     b = 0
@@ -49,7 +49,7 @@ with open(path + 'ccpc_train_v1.0.json','r',encoding = 'utf-8') as fp:
     for ci2 in list(times.keys())[0:29]:
         for datas in data_arr:
             data = json.loads(datas)
-            if data['content'].find(ci2)>0:
+            if data['content'].find(ci2)!=-1:
                 link = data['keywords'].split()
                 for item in link:
                     b = 0
@@ -64,7 +64,7 @@ with open(path + 'ccpc_train_v1.0.json','r',encoding = 'utf-8') as fp:
     for ci2 in list(times.keys())[0:29]:
         for datas in data_arr:
             data = json.loads(datas)
-            if data['content'].find(ci2)>0:
+            if data['content'].find(ci2)!=-1:
                 link = data['keywords'].split()
                 for item in link:
                     b = 0
@@ -82,14 +82,14 @@ with open(path + 'ccpc_train_v1.0.json','r',encoding = 'utf-8') as fp:
     for gci in list(times2.keys())[0:39]:
         for datas in data_arr:
             data = json.loads(datas)
-            if data['keywords'].find(gci)>0:
+            if data['keywords'].find(gci)!=-1:
                 if output.count(data['content']) == 0:
                     output.append(data['content'])
 fp.close()
-f = open(patht,'w',encoding='utf-8')
-for item in output:
+# f = open(patht,'w',encoding='utf-8')
+# for item in output:
 
-    if not f.write(item+'\n'):
-        continue
+#     if not f.write(item+'\n'):
+#         continue
 
-f.close()
+# f.close()
